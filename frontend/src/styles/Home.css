@@ -1,0 +1,134 @@
+/* Animated Gradient Background (preserves previous style) */
+.home-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #6d597a 0%, #22223b 65%, #eaac8b 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Main layout */
+.home-container {
+  min-height: 76vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Glassy card effect */
+.glass-card {
+  background: rgba(245,233,226,0.78);
+  border: 2px solid #eaac8b;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(106, 17, 203, 0.19);
+  padding: 44px 36px 38px 36px;
+  max-width: 480px;
+  width: 96vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(7px);
+  margin-top: 25px;
+  margin-bottom: 16px;
+}
+
+.center-text {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 7px;
+  margin-top: 0;
+  text-align: center;
+  color: #874be6;
+  background: linear-gradient(90deg,#f093fb 40%,#667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.center-desc {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #3d2053;
+  font-weight: 500;
+  margin: 14px 0 0 0;
+  letter-spacing: 0.03em;
+}
+
+/* Button styles for login/register/logout */
+.button-container {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin: 20px 0 0 0;
+  flex-wrap: wrap;
+}
+
+#login-btn, #register-btn, .logout-btn {
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 14px 30px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 0.22s, transform 0.19s;
+  box-shadow: 0 4px 12px rgba(240,147,251,0.17);
+  letter-spacing: 0.1px;
+}
+#login-btn:hover, #register-btn:hover, .logout-btn:hover {
+  box-shadow: 0 8px 20px rgba(240,147,251,0.22);
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #f5576c 0%, #f093fb 100%);
+}
+
+/* Overlay Bubbles for Decorative Effect */
+.bubble-deco {
+  position: absolute;
+  bottom: -60px; left: 10vw;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle at 50% 52%, #efb2fb 76%, #eaac8b 100%);
+  opacity: 0.14;
+  border-radius: 50%;
+  z-index: 1;
+}
+.bubble-deco::after {
+  content: "";
+  position: absolute;
+  left: 61vw; top: -80px;
+  width: 135px; height: 135px;
+  background: radial-gradient(circle at 49% 50%, #6d597a 76%, #eaac8b 100%);
+  opacity: 0.17;
+  border-radius: 50%;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 720px) {
+  .center-text { font-size: 1.33rem;}
+  .center-desc { font-size: 1.05rem; }
+  .glass-card { padding: 18px 7px; border-radius:16px; max-width: 99vw;}
+  .button-container { gap: 10px;}
+  #login-btn, #register-btn, .logout-btn { padding: 10px 14px; font-size: 0.97rem; border-radius:12px;}
+}
+
+@media (max-width: 440px) {
+  .center-text { font-size: 1.01rem; }
+  .center-desc { font-size: 0.92rem; }
+  #login-btn, #register-btn, .logout-btn { font-size: 0.91rem; padding: 8px 7vw;}
+}
+

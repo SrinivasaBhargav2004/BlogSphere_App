@@ -1,0 +1,69 @@
+.about-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #6d597a 0%, #22223b 70%, #eaac8b 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+  box-sizing: border-box;
+}
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+.info-card {
+  background: rgba(245,233,226,0.96);
+  border: 2px solid #eaac8b;
+  box-shadow: 0 8px 36px 4px rgba(106, 17, 203, 0.12);
+  border-radius: 22px;
+  padding: 48px 38px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.info-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: transparent;
+  background: linear-gradient(45deg, #6d597a, #eaac8b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-field p {
+  font-size: 1.11rem;
+  color: #2a1d3c;
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .info-card {
+    padding: 20px 10px;
+    border-radius: 13px;
+    max-width: 97vw;
+    gap: 13px;
+  }
+  .info-title { font-size: 1.36rem; }
+  .info-field p { font-size: 0.98rem; }
+}

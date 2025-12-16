@@ -1,0 +1,203 @@
+.page-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #6d597a 0%, #22223b 70%, #eaac8b 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+.profile-container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46px;
+  margin-bottom: 24px;
+}
+
+.post-card {
+  background: rgba(245,233,226,0.97);
+  border: 2px solid #eaac8b;
+  box-shadow: 0 4px 18px rgba(106,17,203,0.13);
+  border-radius: 22px;
+  padding: 34px 28px 26px 28px;
+  width: 100%;
+  max-width: 850px;         /* <<== WIDER */
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+.profile-card img {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 13px;
+  box-shadow: 0 4px 16px rgba(106,17,203,0.09);
+  background: #fff;
+}
+
+#profile-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6d597a;
+  margin-bottom: 6px;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+.profile-card h1 {
+  font-size: 1.43rem;
+  font-weight: 800;
+  color: #425383;
+  text-align: center;
+  margin-bottom: 11px;
+}
+.logout-btn {
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #eaac8b 65%, #6d597a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 19px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(106,17,203,0.07);
+  transition: background 0.3s;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, #6d597a 65%, #eaac8b 100%);
+}
+
+.personal-post {
+  width: 100vw;
+  max-width: 760px;
+  margin: 0 auto 40px auto;
+  padding: 0 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+#home-head {
+  font-size: 1.26rem;
+  font-weight: bold;
+  color: #5d375a;
+  text-align: center;
+  margin-bottom: 21px;
+  margin-top: 6px;
+}
+
+/* MATCHES POSTS PAGE CARD STYLE */
+.post-card {
+  background: rgba(245,233,226,0.97);
+  border: 2px solid #eaac8b;
+  box-shadow: 0 4px 18px rgba(106,17,203,0.13);
+  border-radius: 22px;
+  padding: 34px 28px 26px 28px;
+  width: 100%;
+  max-width: 540px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.post-head {
+  font-size: 1.37rem;
+  font-weight: bold;
+  color: #6d597a;
+  margin: 0 0 6px 0;
+  word-break: break-word;
+  line-height: 1.22;
+}
+
+.post-content {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.post-para {
+  font-size: 1.13rem;
+  color: #241140;
+  line-height: 1.82;
+  margin-bottom: 12px;
+  word-break: break-word;
+  white-space: pre-line;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.meta {
+  font-size: 1.02rem;
+  color: #5761a5;
+  font-style: italic;
+  text-align: right;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 2px;
+}
+.button-group button {
+  padding: 8px 17px;
+  background: linear-gradient(90deg, #eaac8b 66%, #6d597a 100%);
+  border: none;
+  border-radius: 13px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.99rem;
+  cursor: pointer;
+  transition: background 0.22s;
+}
+.button-group button:hover {
+  background: linear-gradient(90deg, #6d597a 66%, #eaac8b 100%);
+}
+
+.error {
+  color: #ea4b3c;
+  background: rgba(254,202,202,0.91);
+  border-radius: 9px;
+  padding: 8px;
+  text-align: center;
+  font-weight: 500;
+  max-width: 400px;
+  margin: 22px auto 0 auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 800px) {
+  .personal-post { max-width: 99vw; gap: 18px;}
+  .post-card { max-width: 99vw; padding: 15px 7px 13px 7px; border-radius: 14px;}
+  .post-head { font-size: 1.13rem;}
+  .post-para { font-size: 1rem;}
+  .meta { font-size: 0.97rem;}
+  .button-group button { font-size: 0.93rem; padding:6px 11px;}
+}
+@media (max-width: 500px) {
+  .post-card { padding: 9px 2vw 9px 2vw; border-radius: 10px;}
+  .post-head { font-size: 1rem;}
+  .post-para { font-size: 0.97rem;}
+}
